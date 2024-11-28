@@ -1,3 +1,5 @@
+USE plantai_db;
+
 -- Especies
 INSERT INTO plantas_especies (especie)
 VALUES  ('Conífera'),

@@ -1,4 +1,4 @@
--- CREATE database plantai_db;
+
 USE plantai_db;
 
 CREATE table tipo_usuarios(
