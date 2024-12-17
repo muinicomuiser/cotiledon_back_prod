@@ -1,3 +1,5 @@
 /db
 # /imagenes
 /undefined
+/logs
+.env.ia
