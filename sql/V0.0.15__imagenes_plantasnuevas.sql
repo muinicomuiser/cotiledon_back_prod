@@ -13,7 +13,7 @@ create table imagenes_productos(
 );
 
 -- Usuario Super Admin (username: admin, clave: admin)
-INSERT INTO usuarios (contrasena, rut, id_tipo_usuario, nombre_usuario, nombre, apellido, email, telefono, genero, fecha_nacimiento)
+INSERT INTO usuarios (contrasena, rut, id_rol, nombre_usuario, nombre, apellido, email, telefono, genero, fecha_nacimiento)
 VALUES  
 ('$2a$10$1PuyvH.FSLR9P48fDnaHcuPq99HEsdUwHj/u9Bv8B5xel0/KMYGnC', '12422222-2', 1, 'admin', 'Admin', 'Cotiledón', 'admin@mail.com', '951233221', 'Masculino', '1968-01-01');
 
