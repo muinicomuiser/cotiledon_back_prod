@@ -9,15 +9,17 @@ services:
       - MYSQL_DATABASE=${DB_DATABASE}
     ports:
       - '3312:${DB_PORT}'
-
+    networks:
+      - cotiledon
   flyway:
     image: 'flyway/flyway:${VERSION_FLYWAY}'
     volumes:
       - ./sql:/flyway/sql
     command: [ '-url=jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_DATABASE}?allowPublicKeyRetrieval=true&useSSL=false', '-user=${DB_USERNAME}', '-password=${DB_PASSWORD}', '-connectRetries=60', 'migrate' ]
-
-  cotiledon-prod:
-    image: nicolasf1/cotiledonapp:1.11.4
+    networks:
+      - cotiledon
+  backend-prod:
+    image: nicolasf1/cotiledonapp:1.11.5
     volumes:
       - ./imagenes/productos:/home/node/app/imagenes/productos
     depends_on:
@@ -34,5 +36,18 @@ services:
       - RUTA_FISICA=${RUTA_FISICA}
       - JWT_EXPIRES_IN=${JWT_EXPIRES_IN}
       - JWT_SECRET=${JWT_SECRET}
+    networks:
+      - cotiledon
     ports:
       - '8080:${API_PORT}'
+
+  front-prod:
+    image: prueba-front:1
+    ports:
+      - "80:80"
+    networks:
+      - cotiledon
+
+networks:
+  cotiledon:
+    driver: bridge
