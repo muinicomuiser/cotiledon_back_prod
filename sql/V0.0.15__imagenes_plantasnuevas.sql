@@ -12,7 +12,7 @@ create table imagenes_productos(
     foreign key (id_producto) references productos(id)
 );
 
--- Usuario Super Admin (username: admin, clave: admin)
+-- Usuario Super Admin (username: administrador, clave: administrador)
 INSERT INTO usuarios (contrasena, rut, id_rol, nombre_usuario, nombre, apellido, email, telefono, genero, fecha_nacimiento)
 VALUES  
 ('$2a$10$HwrUIArpcQkdACOWYwohQuWUqndXoFOiPMSbLr2tXKxaE9df0AGrS', '12422222-2', 1, 'administrador', 'Admin', 'Cotiledón', 'admin@cotiledon.com', '951233221', 'Femenino', '1900-01-01');
